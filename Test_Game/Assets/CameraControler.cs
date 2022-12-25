@@ -82,17 +82,17 @@ public class CameraControler : MonoBehaviour {
 
         if(Input.GetKey(KeyCode.R)){
 
-            newZoom += zoomAmount;
+            GetComponent<Camera> ().orthographicSize-= zoomTime;
 
         }
         if(Input.GetKey(KeyCode.F)){
 
-            newZoom -= zoomAmount;
+            GetComponent<Camera> ().orthographicSize+= zoomTime;
         }
 
         transform.position = Vector3.Lerp(transform.position, newPosition, Time.deltaTime * movementTime);
         transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, Time.deltaTime * rotationTime);
-        cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, newZoom, Time.deltaTime * zoomTime);
+        //cameraTransform.localPosition = Vector3.Lerp(cameraTransform.localPosition, newZoom, Time.deltaTime * zoomTime);
 
     }
 }

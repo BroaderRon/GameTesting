@@ -3169,7 +3169,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1286624779}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 389a5745b00f9fb428ba4997d905105d, type: 3}
   m_Name: 
@@ -3177,9 +3177,9 @@ MonoBehaviour:
   seAngle: -45
   nwAngle: 135
   neAngle: 45
-  mainTransform: {fileID: 0}
+  mainTransform: {fileID: 1286624780}
   animator: {fileID: 0}
-  spriteRenderer: {fileID: 0}
+  spriteRenderer: {fileID: 1286624782}
 --- !u!1 &1292372557
 GameObject:
   m_ObjectHideFlags: 0
@@ -3550,6 +3550,7 @@ GameObject:
   - component: {fileID: 1394647476}
   - component: {fileID: 1394647477}
   - component: {fileID: 1394647478}
+  - component: {fileID: 1394647480}
   - component: {fileID: 1394647479}
   m_Layer: 0
   m_Name: Square
@@ -3632,7 +3633,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394647474}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9314df18600a7c943becb5c8714824ea, type: 3}
   m_Name: 
@@ -3645,15 +3646,15 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1394647474}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 389a5745b00f9fb428ba4997d905105d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   seAngle: -45
   nwAngle: 135
-  neAngle: 45
-  mainTransform: {fileID: 1394647475}
+  neAngle: -135
+  mainTransform: {fileID: 337969163}
   animator: {fileID: 1394647479}
   spriteRenderer: {fileID: 1394647476}
 --- !u!95 &1394647479
@@ -3676,6 +3677,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!114 &1394647480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394647474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f80317e5ff496c4b8caa3f3723a96e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  angle: 0
 --- !u!1 &1448789727
 GameObject:
   m_ObjectHideFlags: 0

@@ -15,38 +15,37 @@ public class CharacterSpriteDirectionalController : MonoBehaviour
     {
         
         Vector3 camForwardVector = new Vector3(Camera.main.transform.forward.x, 0f, Camera.main.transform.forward.z);
-
-        Debug.DrawRay(Camera.main.transform.position, camForwardVector * 5f, Color.magenta);
+        Debug.DrawRay(Camera.main.transform.position, camForwardVector * 50f, Color.magenta);
 
         float signedAngle = Vector3.SignedAngle(mainTransform.forward, camForwardVector, Vector3.up);
 
-        Vector2 animationDirection = new Vector2(0f, -1f);
+        Vector3 animationDirection = new Vector3(0f, 0f, 1f);
 
         float angle = Mathf.Abs(signedAngle);
 
         if (angle < neAngle){
 
             // North-East anim
-            animationDirection = new Vector2(1f, 1f);
+            animationDirection = new Vector3(1f, 0f, 1f);
         }
         else if (angle < nwAngle){
             
             //North-West anim
-            animationDirection = new Vector2(-1f, 1f);
+            animationDirection = new Vector3(-1f, 0f, 1f);
         }
         else if (angle < seAngle){
 
             // South-East anim
-            animationDirection = new Vector2(1f, -1f);
+            animationDirection = new Vector3(1f, 0f, -1f);
         }
         else{
 
             // South-West anim
-            animationDirection = new Vector2(-1f,-1f);
+            animationDirection = new Vector3(-1f, 0f, -1f);
         }
 
         animator.SetFloat("moveX", animationDirection.x);
-        animator.SetFloat("moveY", animationDirection.y);
+        animator.SetFloat("moveZ", animationDirection.z);
 
     }
 }

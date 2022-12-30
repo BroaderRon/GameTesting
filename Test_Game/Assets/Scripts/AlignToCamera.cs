@@ -21,7 +21,7 @@ public class AlignToCamera : MonoBehaviour
     void Update()
     {
         //Get Tareget Position and Direction
-        targetPos = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z);
+        // targetPos = new Vector3(Camera.main.transform.position.x, transform.position.y, Camera.main.transform.position.z);
         targetDir = targetPos - transform.position;
 
         // Get Angle

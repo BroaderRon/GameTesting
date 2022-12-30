@@ -10,7 +10,7 @@ public class StartMenu : MonoBehaviour{
     // Update is called once per frame
     void update (){
 
-        if (Input.GetKey("escape")){
+        if (Input.GetKeyDown("escape")){
 
             if (GameIsPaused){
 

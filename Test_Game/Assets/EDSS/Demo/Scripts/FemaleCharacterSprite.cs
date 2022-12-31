@@ -7,15 +7,17 @@ namespace EightDirectionalSpriteSystem
     [ExecuteInEditMode]
     public class DemoActor : MonoBehaviour
     {
-        public enum State { NONE, IDLE, WALKING, SHOOT, PAIN, DIE};
+        public enum State { NONE, IDLE, WALKING, AGGRESSIVE, ATTACK, DOWN, DIE, HSCENE};
 
         public ActorBillboard actorBillboard;
 
         public ActorAnimation idleAnim;
         public ActorAnimation walkAnim;
-        public ActorAnimation shootAnim;
-        public ActorAnimation painAnim;
+        public ActorAnimation aggressiveAnim;
+        public ActorAnimation attackAnim;
+        public ActorAnimation downAnim;
         public ActorAnimation dieAnim;
+        public ActorAnimation hsceneAnim;
 
 
         private Transform myTransform;
@@ -60,22 +62,26 @@ namespace EightDirectionalSpriteSystem
                         break;
 
                     case State.IDLE:
-                        nextState = State.WALKING;
+                        nextState = State.AGGRESSIVE;
                         break;
 
-                    case State.WALKING:
-                        nextState = State.SHOOT;
+                    case State.AGGRESSIVE:
+                        nextState = State.ATTACK;
                         break;
 
-                    case State.SHOOT:
-                        nextState = State.PAIN;
+                    case State.ATTACK:
+                        nextState = State.DOWN;
                         break;
 
-                    case State.PAIN:
+                    case State.DOWN:
                         nextState = State.DIE;
                         break;
 
                     case State.DIE:
+                        nextState = State.HSCENE;
+                        break;
+
+                    case State.HSCENE:
                         nextState = State.IDLE;
                         break;
 
@@ -95,20 +101,24 @@ namespace EightDirectionalSpriteSystem
             switch (currentState)
             {
 
-                case State.WALKING:
-                    currentAnimation = walkAnim;
+                case State.AGGRESSIVE:
+                    currentAnimation = aggressiveAnim;
                     break;
 
-                case State.SHOOT:
-                    currentAnimation = shootAnim;
+                case State.ATTACK:
+                    currentAnimation = attackAnim;
                     break;
 
-                case State.PAIN:
-                    currentAnimation = painAnim;
+                case State.DOWN:
+                    currentAnimation = downAnim;
                     break;
 
                 case State.DIE:
                     currentAnimation = dieAnim;
+                    break;
+
+                case State.HSCENE:
+                    currentAnimation = hsceneAnim;
                     break;
 
                 default:

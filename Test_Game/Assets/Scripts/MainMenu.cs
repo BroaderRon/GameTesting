@@ -8,9 +8,7 @@ public class MainMenu : MonoBehaviour{
     public void PlayGameDevTestMap (){
 
         // Loads the Dev Test Dungeon.
-        SceneManager.LoadScene(1){
-            Debug.Log ("Loading dev map...");
-        }
+        SceneManager.LoadScene(1);
 
         // Loads the next level.
         // EXAMPLE -> SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
